@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sinhala Word Trainer · Lesson 1</title>
+<meta name="theme-color" content="#0f5e6e">
+<meta name="description" content="Learn commonly confused Sinhala words with Hindi and English meanings. Compiled by Hav Khem Bdr Chetry.">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600&family=Inter:wght@400;600;700&display=swap">
+<style>
+:root{--teal:#0f5e6e;--teal2:#14798c;--amber:#d98a1f;--green:#2f7d4f;--purple:#6b4fa0;--red:#c0392b;--bg:#f4f8f9;--card:#fff;--ink:#1f2a30;--mute:#5b6b71;--line:#dbe6e9}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Inter","Noto Sans Sinhala","Noto Sans Devanagari",sans-serif;background:var(--bg);color:var(--ink);font-size:16px;line-height:1.5}
+.si{font-family:"Noto Sans Sinhala",sans-serif}
+.hi{font-family:"Noto Sans Devanagari",sans-serif}
+header{background:linear-gradient(135deg,var(--teal),var(--teal2));color:#fff;padding:16px 16px 12px}
+header h1{margin:0;font-size:20px}
+header .sub{font-size:13px;opacity:.9}
+header .by{font-size:12px;color:#ffd28a;margin-top:2px}
+nav{display:flex;position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid var(--line)}
+nav button{flex:1;border:0;background:none;padding:12px 4px;font:600 14px Inter,sans-serif;color:var(--mute);border-bottom:3px solid transparent;cursor:pointer}
+nav button.on{color:var(--teal);border-bottom-color:var(--amber)}
+main{max-width:720px;margin:0 auto;padding:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:12px}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:20px;padding:6px 12px;font-size:13px;cursor:pointer;font-family:inherit}
+.chip.on{background:var(--teal);color:#fff;border-color:var(--teal)}
+h2{font-size:18px;margin:0 0 8px;color:var(--teal)}
+.word{font-size:22px;font-weight:700;color:var(--teal)}
+.ro{font-style:italic;color:var(--mute);font-size:14px}
+.tag{display:inline-block;font-size:11px;font-weight:700;color:#fff;border-radius:4px;padding:1px 6px;margin-left:6px;vertical-align:middle}
+.tag.C{background:var(--green)}.tag.L{background:var(--purple)}.tag.B{background:var(--amber)}
+.box{border-radius:10px;padding:10px 12px;margin:8px 0;font-size:14px}
+.tip{background:#fff6e0;border-left:5px solid var(--amber)}
+.warn{background:#fdecea;border-left:5px solid var(--red)}
+.bridge{background:#e8f0fb;border-left:5px solid #2f5fa8}
+.box b.t{display:block;font-size:12px;letter-spacing:.5px;text-transform:uppercase;margin-bottom:2px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.wrow{padding:10px 0;border-bottom:1px solid var(--line)}
+.wrow:last-child{border:0}
+/* flashcard */
+.flash{perspective:1000px;height:300px;margin-bottom:12px;cursor:pointer}
+.inner{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d}
+.flash.flip .inner{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px;text-align:center}
+.front{background:linear-gradient(160deg,var(--teal),var(--teal2));color:#fff}
+.front .big{font-size:40px;font-weight:700}
+.back{background:#fff;border:2px solid var(--amber);transform:rotateY(180deg)}
+.back .big{font-size:22px;font-weight:700;color:var(--teal)}
+.hint{font-size:12px;opacity:.75;margin-top:10px}
+.btns{display:flex;gap:8px}
+.btn{flex:1;border:0;border-radius:10px;padding:12px;font:600 15px Inter,sans-serif;cursor:pointer;background:var(--teal);color:#fff}
+.btn.alt{background:#fff;color:var(--teal);border:1px solid var(--teal)}
+.btn.good{background:var(--green)}.btn.bad{background:var(--red)}
+.prog{height:6px;background:var(--line);border-radius:3px;overflow:hidden;margin:4px 0 12px}
+.prog div{height:100%;background:var(--amber);transition:width .3s}
+.opt{display:block;width:100%;text-align:left;border:1px solid var(--line);background:#fff;border-radius:10px;padding:12px;margin:6px 0;font-size:17px;cursor:pointer;font-family:inherit}
+.opt.right{background:#e3f4e9;border-color:var(--green)}
+.opt.wrong{background:#fdecea;border-color:var(--red)}
+.q{font-size:18px;font-weight:600;margin-bottom:6px}
+.expl{font-size:14px;margin-top:8px;padding:10px;border-radius:8px;background:#f5f9fa}
+.score{font-size:42px;font-weight:700;color:var(--teal);text-align:center}
+input[type=search]{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:10px;font-size:16px;margin-bottom:10px;font-family:inherit}
+.small{font-size:13px;color:var(--mute)}
+.hl{color:var(--red)}
+.ex{padding:8px 0;border-top:1px dashed var(--line);font-size:14px}
+.ex .s{font-size:17px;font-weight:600}
+footer{text-align:center;font-size:12px;color:var(--mute);padding:16px}
+</style>
+</head>
+<body>
+<header>
+  <h1>Sinhala Word Trainer <span class="si" style="font-weight:400">· පටලැවෙන වචන</span></h1>
+  <div class="sub">Lesson 1 · Groups 1–5 · for Hindi speakers</div>
+  <div class="by">Compiled by Hav Khem Bdr Chetry</div>
+</header>
+<nav id="nav">
+  <button data-v="learn" class="on">Learn</button>
+  <button data-v="cards">Flashcards</button>
+  <button data-v="quiz">Quiz</button>
+  <button data-v="words">Words</button>
+</nav>
+<main id="main"></main>
+<footer>Sinhala Word Trainer · Lesson 1 · Hav Khem Bdr Chetry · <a href="privacy.html">Privacy policy</a></footer>
+
+<script>
+const GROUPS=[
+ {id:1,title:"ඉන්නවා / තියෙනවා / තියනවා",hindi:"है (सजीव) · है / के पास है (निर्जीव) · रखना",
+  rule:"Alive → <b>ඉන්නවා</b>. Thing → <b>තියෙනවා</b>. Put → <b>තියනවා</b>.",
+  bridge:"Hindi uses है for everything. Sinhala asks: is it alive? मेरे पास समय है → <span class='si'>මට වෙලාව තියෙනවා</span>; मेरी एक बहन है → <span class='si'>මට නංගි කෙනෙක් ඉන්නවා</span>.",
+  tip:"<b>ඉ</b>න්නවා = <b>इंसान</b> (living). <b>ති</b>යෙනවා = <b>thi</b>ng. ති<b>යෙ</b>නවා has 'e' for <b>E</b>xists; තියනවා has no 'e' = you put it.",
+  mistake:"✗ <span class='si'>මට අයියා කෙනෙක් තියෙනවා</span> → ✓ <span class='si'>… ඉන්නවා</span>",
+  ex:[["අම්මා ගෙදර ඉන්නවා.","Ammā gedara innavā.","माँ घर पर है।","Mother is at home."],["මේසය උඩ පොතක් තියෙනවා.","Mēsaya uḍa potak tiyenavā.","मेज़ पर एक किताब है।","There is a book on the table."],["බෑග් එක මේසය උඩ තියන්න.","Bǟg eka mēsaya uḍa tiyanna.","बैग मेज़ पर रख दो।","Put the bag on the table."],["ජනාධිපතිවරයා දැනට කොළඹ සිටී.","Janādhipativarayā dænaṭa koḷamba siṭī.","राष्ट्रपति इस समय कोलंबो में हैं।","The President is currently in Colombo. (literary)"]]},
+ {id:2,title:"බලනවා / පේනවා / දකිනවා / පෙන්නනවා",hindi:"देखना · दिखना · देखना (नज़र पड़ना) · दिखाना",
+  rule:"I look → <b>මම බලනවා</b>. It is visible to me → <b>මට පේනවා</b>. I see / catch sight → <b>දකිනවා</b>. I show → <b>පෙන්නනවා</b>.",
+  bridge:"Same system as Hindi: मुझे दिखता है → <span class='si'>මට පේනවා</span>; खाकर देखो → <span class='si'>කාලා බලන්න</span>; दिखाना → <span class='si'>පෙන්නනවා</span>.",
+  tip:"Verbs that happen <i>to</i> you take <b>මට</b> (like मुझे): පේනවා, ඇහෙනවා, තේරෙනවා, දැනෙනවා.",
+  mistake:"✗ <span class='si'>මම කන්ද පේනවා</span> → ✓ <span class='si'>මට කන්ද පේනවා</span>",
+  ex:[["අපි රෑට ටීවී බලනවා.","Api rǟṭa ṭīvī balanavā.","हम रात को टीवी देखते हैं।","We watch TV at night."],["මට කන්ද පේනවා.","Maṭa kanda pēnavā.","मुझे पहाड़ दिख रहा है।","I can see the mountain."],["මට පාර පෙන්නන්න පුළුවන්ද?","Maṭa pāra pennanna puḷuvanda?","क्या आप मुझे रास्ता दिखा सकते हैं?","Can you show me the way?"],["ඔයා මහන්සි වෙලා වගේ පේනවා.","Oyā mahansi velā vagē pēnavā.","तुम थके हुए लग रहे हो।","You look tired."]]},
+ {id:3,title:"අහනවා / ඇහෙනවා / ඇහැ",hindi:"पूछना + सुनना · सुनाई देना · आँख",
+  rule:"Ask or listen → <b>අහනවා</b> (ask <b>-ගෙන්</b> = से). Be heard → <b>මට ඇහෙනවා</b>. ඇහැ = eye (noun).",
+  bridge:"उससे पूछो → <span class='si'>එයාගෙන් අහන්න</span>. मुझे आवाज़ सुनाई दी → <span class='si'>මට සද්දයක් ඇහුණා</span>.",
+  tip:"ඇහු<b>වා</b> = asked/listened (<b>V</b>olunteer). ඇහු<b>ණා</b> = was heard (<b>N</b>ot your choice).",
+  mistake:"✗ <span class='si'>සද්දයක් ඇහුවා</span> → ✓ <span class='si'>සද්දයක් ඇහුණා</span>",
+  ex:[["මම ගුරුතුමාගෙන් ප්‍රශ්නයක් ඇහුවා.","Mama gurutumāgen praśnayak æhuvā.","मैंने गुरुजी से एक सवाल पूछा।","I asked the teacher a question."],["මම රෑට රේඩියෝ අහනවා.","Mama rǟṭa rēḍiyō ahanavā.","मैं रात को रेडियो सुनता हूँ।","I listen to the radio at night."],["ඔයා කියන දේ මට ඇහෙන්නේ නැහැ.","Oyā kiyana dē maṭa æhennē næhæ.","तुम जो कह रहे हो, मुझे सुनाई नहीं दे रहा।","I can't hear what you are saying."],["ප්‍රදේශයේ පිපිරුම් හඬක් ඇසිණ.","Pradēśayē pipirum haňḍak æsiṇa.","इलाके में एक धमाके की आवाज़ सुनाई दी।","The sound of an explosion was heard in the area. (literary)"]]},
+ {id:4,title:"කියනවා / කියවනවා / කියලා",hindi:"कहना, बताना · पढ़ना · कि",
+  rule:"Say/tell → <b>කියනවා</b>. Read → <b>කියවනවා</b> (extra <b>ව</b>). 'That' → clause + <b>කියලා</b>.",
+  bridge:"उसने कहा कि वह आएगा → <span class='si'>එයා එනවා කියලා කිව්වා</span> — कि comes at the end. 'Study' is not කියවනවා: use ඉගෙන ගන්නවා.",
+  tip:"Picture <b>ව</b> as an open book: if the book is there, you are reading.",
+  mistake:"✗ <span class='si'>මම පත්තරේ කියනවා</span> → ✓ <span class='si'>මම පත්තරේ කියවනවා</span>",
+  ex:[["අම්මා මට ඇත්ත කිව්වා.","Ammā maṭa ætta kivvā.","माँ ने मुझे सच बताया।","Mother told me the truth."],["මම හැමදාම උදේ පත්තරේ කියවනවා.","Mama hæmadāma udē pattarē kiyavanavā.","मैं रोज़ सुबह अख़बार पढ़ता हूँ।","I read the newspaper every morning."],["එයා හෙට එනවා කියලා කිව්වා.","Eyā heṭa enavā kiyalā kivvā.","उसने कहा कि वह कल आएगा।","He said he would come tomorrow."],["මේකට සිංහලෙන් මොකක්ද කියන්නේ?","Mēkaṭa siṁhalen mokakda kiyannē?","इसे सिंहली में क्या कहते हैं?","What is this called in Sinhala?"]]},
+ {id:5,title:"නැහැ / නෙමෙයි / බැහැ / එපා",hindi:"नहीं (है) · (यह) नहीं है · नहीं सकता · मत",
+  rule:"Absence / verb negative → <b>නැහැ</b> (යන්නේ නැහැ). Is not X → <b>නෙමෙයි</b>. Cannot → <b>මට … බැහැ</b>. Don't → <b>… එපා</b>.",
+  bridge:"Hindi नहीं = four Sinhala words. मैं शिक्षक नहीं हूँ → <span class='si'>මම ගුරුවරයෙක් නෙමෙයි</span>. मत जाओ → <span class='si'>යන්න එපා</span>.",
+  tip:"<b>නැ</b>හැ = <b>na</b>हीं है · නෙ<b>මෙ</b>යි = 'not <b>me</b>' (identity) · <b>බැ</b>හැ = <b>बे</b>बस (can't) · එපා = 'Eh, pā(s) mat jao!'",
+  mistake:"✗ <span class='si'>මම යනවා නැහැ</span> → ✓ <span class='si'>මම යන්නේ නැහැ</span>",
+  ex:[["මට අද වෙලාව නැහැ.","Maṭa ada velāva næhæ.","आज मेरे पास समय नहीं है।","I don't have time today."],["මම ගුරුවරයෙක් නෙමෙයි, ශිෂ්‍යයෙක්.","Mama guruvarayek nemeyi, śiṣyayek.","मैं शिक्षक नहीं, छात्र हूँ।","I'm not a teacher, I'm a student."],["මට අද එන්න බැහැ.","Maṭa ada enna bæhæ.","मैं आज नहीं आ सकता।","I can't come today."],["ඒ පැත්තට යන්න එපා.","Ē pættaṭa yanna epā.","उस तरफ़ मत जाओ।","Don't go that way."]]}
+];
+const WORDS=[
+ [1,"ඉන්නවා","innavā","है / रहना (सजीव)","be, stay (living)","C"],
+ [1,"සිටී","siṭī","है (सजीव)","is (living)","L"],
+ [1,"තියෙනවා","tiyenavā","है / के पास है","be, have (things)","C"],
+ [1,"ඇත","æta","है","is, exists","L"],
+ [1,"පවතී","pavatī","विद्यमान है","exists, prevails","L"],
+ [1,"තියනවා","tiyanavā","रखना","to put, keep","C"],
+ [1,"තබයි","tabayi","रखता है","puts","L"],
+ [2,"බලනවා","balanavā","देखना","look, watch, try","C"],
+ [2,"පේනවා","pēnavā","दिखना","be visible; seem","C"],
+ [2,"පෙනේ","penē","दिखता है","is visible","L"],
+ [2,"දකිනවා","dakinavā","देखना (नज़र पड़ना)","see","B"],
+ [2,"දුටුවේය","duṭuvēya","देखा","saw","L"],
+ [2,"පෙන්නනවා","pennanavā","दिखाना","show","C"],
+ [2,"පෙන්වයි","penvayi","दिखाता है","shows","L"],
+ [3,"අහනවා","ahanavā","पूछना; सुनना","ask; listen","C"],
+ [3,"අසයි","asayi","पूछता/सुनता है","asks; listens","L"],
+ [3,"ඇහෙනවා","æhenavā","सुनाई देना","be heard","C"],
+ [3,"ඇසේ","æsē","सुनाई देता है","is heard","L"],
+ [3,"ඇහැ","æhæ","आँख","eye","C"],
+ [3,"ඇහුම්කන් දෙනවා","æhumkan denavā","ध्यान से सुनना","listen attentively","B"],
+ [4,"කියනවා","kiyanavā","कहना, बताना","say, tell","C"],
+ [4,"පැවසීය","pævasīya","कहा (औपचारिक)","stated","L"],
+ [4,"කියවනවා","kiyavanavā","पढ़ना","read","C"],
+ [4,"කියවයි","kiyavayi","पढ़ता है","reads","L"],
+ [4,"කියලා","kiyalā","कि","that (quotative)","C"],
+ [4,"බව","bava","कि","that (quotative)","L"],
+ [5,"නැහැ","næhæ","नहीं (है)","there isn't; not","C"],
+ [5,"නැත","næta","नहीं है","there isn't","L"],
+ [5,"නෙමෙයි","nemeyi","(यह) नहीं है","is not","C"],
+ [5,"නොවේ","novē","नहीं है","is not","L"],
+ [5,"බැහැ","bæhæ","नहीं सकता","cannot","C"],
+ [5,"එපා","epā","मत; नहीं चाहिए","don't; don't want","C"]
+];
+const QUIZ=[
+ ["मेरे दो बड़े भाई हैं → මට අයියලා දෙන්නෙක් ____ .",["තියෙනවා","ඉන්නවා","තියනවා","පේනවා"],1,"Brothers are living beings → ඉන්නවා."],
+ ["I can't hear what you say → ඔයා කියන දේ මට ____ නැහැ.",["අහන්නේ","ඇහෙන්නේ","කියන්නේ","බලන්නේ"],1,"Hearing happens to you: මට + ඇහෙනවා."],
+ ["Which word means 'to read'?",["කියනවා","කියවනවා","කිව්වා","කියලා"],1,"The extra ව = read."],
+ ["मैं डॉक्टर नहीं हूँ → මම දොස්තර කෙනෙක් ____ .",["නැහැ","බැහැ","නෙමෙයි","එපා"],2,"Identity → නෙමෙයි."],
+ ["मुझे पहाड़ दिख रहा है →",["මම කන්ද බලනවා","මට කන්ද පේනවා","මට කන්ද බලනවා","මම කන්ද පේනවා"],1,"'Be visible' takes මට."],
+ ["Literary equivalent of තියෙනවා:",["සිටී","ඇත","ඈත","ඇත්ත"],1,"ඇත = is (lit.). ඈත = far, ඇත්ත = truth."],
+ ["Put the book on the table → පොත මේසය උඩ ____ .",["තියෙන්න","තියන්න","ඉන්න","බලන්න"],1,"Put = තියනවා (no ෙ)."],
+ ["A sound was heard → සද්දයක් ____ .",["ඇහුවා","ඇහුණා","කිව්වා","දැක්කා"],1,"Involitive past → ඇහුණා."],
+ ["The dog is barking → ____ බුරනවා.",["බලා","බල්ලා","බලන","බැලුවා"],1,"Double ල්ල = dog."],
+ ["मत जाओ →",["නැහැ යන්න","යන්න නැහැ","යන්න එපා","එපා යන්න"],2,"එපා comes after the -න්න form."],
+ ["I don't go →",["මම යනවා නැහැ","මම යන්නේ නැහැ","මම යන්න නැහැ","මම නෙමෙයි"],1,"Before නැහැ use the -න්නේ form."],
+ ["I can't come today → මට අද එන්න ____ .",["නැහැ","බැහැ","නෙමෙයි","එපා"],1,"Inability → බැහැ."],
+ ["I asked the teacher → මම ගුරුතුමා____ ඇහුවා.",["ට","ගෙන්","ව","ගේ"],1,"Ask from someone: -ගෙන් = से."],
+ ["Which sentence is literary?",["ඔහු ගෙදර සිටී.","අම්මා ගෙදර ඉන්නවා.","මට සල්ලි නැහැ.","එයා එනවා කියලා කිව්වා."],0,"සිටී is the literary 'is' for living beings."],
+ ["Show me the way → මට පාර ____ .",["බලන්න","පේන්න","පෙන්නන්න","දකින්න"],2,"Show = පෙන්නනවා (दिखाना)."],
+ ["इसे खाकर देखो →",["මේක කාලා බලන්න","මේක කාලා පේනවා","මේක කාලා දකින්න","මේක කාලා පෙන්නන්න"],0,"Participle + බලන්න = try, like खाकर देखना."],
+ ["Literary of නෙමෙයි:",["නැත","නොවේ","නොහැකිය","නො-"],1,"නොවේ = is not (lit.)."],
+ ["News: 'the minister stated' →",["ඇමතිවරයා කිව්වා","ඇමතිවරයා පැවසීය","ඇමතිවරයා කියවීය","ඇමතිවරයා ඇසීය"],1,"පැවසීය = stated (news register)."]
+];
+let st={known:{}};try{st=JSON.parse(localStorage.getItem("swt1"))||st}catch(e){}
+function save(){try{localStorage.setItem("swt1",JSON.stringify(st))}catch(e){}}
+const M=document.getElementById("main");
+const esc=s=>s;
+const tagname={C:"Colloquial",L:"Literary",B:"Both"};
+function wrapSi(s){return s.replace(/([඀-෿‍]+(?:[\s඀-෿‍.,?!-]*[඀-෿‍]+)*)/g,"<span class='si'>$1</span>")}
+let view="learn",gsel=0;
+function chips(cb){return "<div class='chips'>"+["All",1,2,3,4,5].map((g,i)=>`<button class='chip ${gsel==i?"on":""}' data-g='${i}'>${i?"Group "+g:"All"}</button>`).join("")+"</div>"}
+function bindChips(f){M.querySelectorAll(".chip").forEach(b=>b.onclick=()=>{gsel=+b.dataset.g;f()})}
+
+function learn(){
+ const gs=gsel?GROUPS.filter(g=>g.id==gsel):GROUPS;
+ M.innerHTML=chips()+gs.map(g=>`<div class='card'><div class='small'>GROUP ${g.id}</div><h2 class='si'>${g.title}</h2><div class='hi small'>${g.hindi}</div>
+ <div class='box' style='background:#eaf6ee;border-left:5px solid var(--green)'><b class='t' style='color:var(--green)'>Rule</b>${wrapSi(g.rule)}</div>
+ <div class='box bridge'><b class='t' style='color:#2f5fa8'>Hindi bridge</b>${g.bridge}</div>
+ <div class='box tip'><b class='t' style='color:#a5650c'>Memory trick</b>${wrapSi(g.tip)}</div>
+ <div class='box warn'><b class='t' style='color:var(--red)'>Common mistake</b>${g.mistake}</div>
+ ${g.ex.map(e=>`<div class='ex'><div class='s si'>${e[0]}</div><div class='ro'>${e[1]}</div><div class='hi'>${e[2]}</div><div class='small'>${e[3]}</div></div>`).join("")}</div>`).join("");
+ bindChips(learn);
+}
+
+let deck=[],di=0;
+function buildDeck(){deck=WORDS.filter(w=>!gsel||w[0]==gsel).sort(()=>Math.random()-.5);di=0}
+function cards(){
+ if(!deck.length)buildDeck();
+ if(di>=deck.length){const k=deck.filter(w=>st.known[w[1]]).length;
+  M.innerHTML=chips()+`<div class='card' style='text-align:center'><div class='score'>${k} / ${deck.length}</div><p>words marked "I knew it"</p><div class='btns'><button class='btn' id='again'>Shuffle & start again</button></div></div>`;
+  bindChips(()=>{buildDeck();cards()});document.getElementById("again").onclick=()=>{buildDeck();cards()};return}
+ const w=deck[di];
+ M.innerHTML=chips()+`<div class='small'>Card ${di+1} of ${deck.length} · tap the card to flip</div><div class='prog'><div style='width:${di/deck.length*100}%'></div></div>
+ <div class='flash' id='fc'><div class='inner'>
+  <div class='face front'><div class='big si'>${w[1]}</div><div style='margin-top:6px'><span class='tag ${w[5]}'>${tagname[w[5]]}</span></div><div class='hint'>What does it mean?</div></div>
+  <div class='face back'><div class='big si'>${w[1]}</div><div class='ro'>${w[2]}</div><div class='hi' style='font-size:20px;margin-top:8px'>${w[3]}</div><div style='font-size:17px'>${w[4]}</div><div class='small' style='margin-top:6px'>Group ${w[0]}</div></div>
+ </div></div>
+ <div class='btns'><button class='btn bad' id='no'>Still learning</button><button class='btn good' id='yes'>I knew it</button></div>`;
+ const fc=document.getElementById("fc");fc.onclick=()=>fc.classList.toggle("flip");
+ document.getElementById("yes").onclick=()=>{st.known[w[1]]=1;save();di++;cards()};
+ document.getElementById("no").onclick=()=>{delete st.known[w[1]];save();di++;cards()};
+ bindChips(()=>{buildDeck();cards()});
+}
+
+let qs=[],qi=0,qscore=0,answered=false,missed=[];
+function newQuiz(){qs=QUIZ.slice().sort(()=>Math.random()-.5).slice(0,10);qi=0;qscore=0;missed=[]}
+function quiz(){
+ if(!qs.length)newQuiz();
+ if(qi>=qs.length){
+  st.best=Math.max(st.best||0,qscore);save();
+  M.innerHTML=`<div class='card' style='text-align:center'><div class='score'>${qscore} / ${qs.length}</div><p>${qscore>=9?"Excellent! Ready for Lesson 2.":qscore>=7?"Good — review the ones you missed.":"Go back to Learn, then try again."}</p><p class='small'>Best score: ${st.best} / 10</p><button class='btn' id='again'>New quiz</button></div>`+
+  (missed.length?`<div class='card'><h2>Review</h2>${missed.map(m=>`<div class='ex'><div>${wrapSi(m[0])}</div><div><b>Answer:</b> <span class='si'>${m[1][m[2]]}</span></div><div class='small'>${wrapSi(m[3])}</div></div>`).join("")}</div>`:"");
+  document.getElementById("again").onclick=()=>{newQuiz();quiz()};return}
+ const q=qs[qi];answered=false;
+ M.innerHTML=`<div class='small'>Question ${qi+1} of ${qs.length} · Score ${qscore}</div><div class='prog'><div style='width:${qi/qs.length*100}%'></div></div>
+ <div class='card'><div class='q'>${wrapSi(q[0])}</div>${q[1].map((o,i)=>`<button class='opt si' data-i='${i}'>${o}</button>`).join("")}<div id='ex'></div></div>`;
+ M.querySelectorAll(".opt").forEach(b=>b.onclick=()=>{
+  if(answered)return;answered=true;const i=+b.dataset.i;
+  M.querySelectorAll(".opt")[q[2]].classList.add("right");
+  if(i==q[2])qscore++;else{b.classList.add("wrong");missed.push(q)}
+  document.getElementById("ex").innerHTML=`<div class='expl'>${i==q[2]?"✅ Correct! ":"❌ Not quite. "}${wrapSi(q[3])}</div><div class='btns' style='margin-top:10px'><button class='btn' id='nx'>${qi+1<qs.length?"Next":"See score"}</button></div>`;
+  document.getElementById("nx").onclick=()=>{qi++;quiz()};
+ });
+}
+
+let term="";
+function words(){
+ M.innerHTML=`<input type='search' id='s' placeholder='Search Sinhala, Roman, Hindi or English…' value='${term}'>`+chips()+"<div class='card' id='wl'></div>";
+ const draw=()=>{const t=term.toLowerCase();
+  const list=WORDS.filter(w=>(!gsel||w[0]==gsel)&&(!t||w.slice(1).join(" ").toLowerCase().includes(t)));
+  document.getElementById("wl").innerHTML=list.length?list.map(w=>`<div class='wrow'><span class='word si'>${w[1]}</span><span class='tag ${w[5]}'>${tagname[w[5]]}</span>${st.known[w[1]]?" ✓":""}<div class='ro'>${w[2]}</div><div><span class='hi'>${w[3]}</span> · ${w[4]}</div></div>`).join(""):"<p class='small'>No match.</p>"};
+ const s=document.getElementById("s");s.oninput=()=>{term=s.value;draw()};
+ bindChips(words);draw();
+}
+const V={learn,cards,quiz,words};
+document.querySelectorAll("nav button").forEach(b=>b.onclick=()=>{
+ document.querySelectorAll("nav button").forEach(x=>x.classList.toggle("on",x==b));
+ view=b.dataset.v;if(view=="cards")buildDeck();if(view=="quiz")newQuiz();V[view]();window.scrollTo(0,0)});
+learn();
+if("serviceWorker" in navigator){navigator.serviceWorker.register("sw.js").catch(()=>{})}
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "name": "Sinhala Word Trainer",
+  "short_name": "Sinhala Words",
+  "description": "Commonly confused Sinhala words for Hindi speakers — flashcards, quiz and word list. Compiled by Hav Khem Bdr Chetry.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f4f8f9",
+  "theme_color": "#0f5e6e",
+  "lang": "en",
+  "categories": ["education"],
+  "icons": [
+    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ]
+}

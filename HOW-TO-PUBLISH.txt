@@ -1,0 +1,108 @@
+SINHALA WORD TRAINER — HOW TO PUT IT ON THE GOOGLE PLAY STORE
+Compiled by Hav Khem Bdr Chetry
+===============================================================
+
+BEFORE YOU START
+- Open privacy.html in any text editor and replace [YOUR EMAIL ADDRESS]
+  with your email. Google requires a contact address.
+- You will need: a Google (Gmail) account, a debit/credit card for the
+  one-time US$25 fee (prepaid cards are not accepted), and a government ID.
+
+
+STEP 1 — PUT THE APP ONLINE (free, with GitHub Pages)
+1. Go to github.com and create a free account.
+2. Click "+" (top right) > "New repository".
+   Name it:  sinhala-trainer     Choose "Public". Click "Create repository".
+3. Click "uploading an existing file". Drag in EVERYTHING from this folder
+   (index.html, manifest.json, sw.js, privacy.html and the "icons" folder).
+   Click "Commit changes".
+4. Open the repository's "Settings" > "Pages".
+   Under "Branch" choose "main" and "/ (root)", then click "Save".
+5. Wait 1–2 minutes. Your app is now live at:
+   https://YOUR-GITHUB-NAME.github.io/sinhala-trainer/
+   Your privacy policy is at:
+   https://YOUR-GITHUB-NAME.github.io/sinhala-trainer/privacy.html
+6. Open the first link on your phone to check the app works.
+
+
+STEP 2 — MAKE THE ANDROID APP FILE (free, with PWABuilder)
+1. Go to pwabuilder.com
+2. Paste your app link from Step 1 and click "Start".
+3. Click "Package for stores" > "Android" > "Generate package".
+   Package ID suggestion:  io.github.YOURGITHUBNAME.sinhalatrainer
+4. Download the zip. Inside you will find:
+   - an .aab file  (this is what you upload to Google Play)
+   - a signing key file and a text file with its passwords.
+   KEEP THE KEY FILE AND PASSWORDS SAFE. You need them for every future update.
+5. The zip also contains "assetlinks.json". Create a folder named
+   ".well-known" in your GitHub repository and upload assetlinks.json into it.
+   (PWABuilder's own instructions in the zip explain this. It removes the
+   address bar from the app.)
+
+
+STEP 3 — CREATE YOUR GOOGLE PLAY DEVELOPER ACCOUNT
+1. Go to play.google.com/console and sign in.
+2. Choose "Personal" account (for yourself).
+3. Pay the one-time US$25 fee and complete identity verification.
+
+
+STEP 4 — CREATE THE APP IN PLAY CONSOLE
+1. Click "Create app". Name: Sinhala Word Trainer. Type: App. Free.
+2. Fill in "Set up your app": privacy policy link (from Step 1),
+   app category = Education, content rating questionnaire, target audience
+   (choose 18+ or 13+ to keep it simple), data safety form
+   (answer: the app collects NO data).
+3. Store listing — copy the texts below.
+4. Upload graphics: app icon = icons/icon-512.png.
+   Screenshots: take 2–4 screenshots of the app on your phone.
+   Feature graphic (1024 x 500) — ask Claude to make one if you need it.
+
+
+STEP 5 — CLOSED TESTING (required for new personal accounts)
+1. In Play Console go to "Testing" > "Closed testing" > create a track.
+2. Upload the .aab file from Step 2.
+3. Add at least 12 testers (their Gmail addresses) — e.g. course-mates.
+   They must join and keep the app installed for 14 days.
+4. After 14 days, click "Apply for production" and answer Google's questions.
+5. When Google approves, publish to "Production". Anyone can now install it.
+
+
+UPDATING THE APP LATER (e.g. adding Lesson 2)
+- Upload the new index.html to GitHub. Because the Play Store app opens your
+  website, users get the update automatically — no new Play upload needed.
+- In sw.js change "sinhala-trainer-v1" to "v2" so phones fetch the new version.
+
+
+STORE LISTING TEXTS (copy and paste)
+-----------------------------------
+App name:
+Sinhala Word Trainer
+
+Short description (max 80 characters):
+Learn confusing Sinhala words with Hindi & English meanings, flashcards, quiz.
+
+Full description:
+Sinhala Word Trainer helps Hindi-speaking learners master the Sinhala words
+that are most often confused.
+
+Hindi uses one word where Sinhala often uses two or three — है, देखना, सुनना,
+नहीं. This app explains each difference side by side, with Hindi as your
+learning bridge.
+
+Lesson 1 covers five key groups:
+• ඉන්නවා / තියෙනවා / තියනවා — to be (living), to be (things), to put
+• බලනවා / පේනවා / දකිනවා / පෙන්නනවා — look, be visible, see, show
+• අහනවා / ඇහෙනවා — ask & listen, be heard
+• කියනවා / කියවනවා / කියලා — say, read, "that"
+• නැහැ / නෙමෙයි / බැහැ / එපා — the four kinds of "not"
+
+Features:
+• Clear rules, Hindi bridge notes, memory tricks and common-mistake warnings
+• Example sentences in Sinhala, Roman letters, Hindi and English
+• Literary (written) and colloquial (spoken) forms clearly marked
+• Flashcards with progress tracking
+• Quiz with explanations and review of mistakes
+• Searchable word list
+• Works offline, no sign-in, no ads, no data collected
+
+Compiled by Hav Khem Bdr Chetry.
